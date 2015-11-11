@@ -7,8 +7,24 @@
 <body>
 	<h1>Calculadora</h1>
 	<label for="var-a">variable a</label>
-	<input type="text" id="var-a">	
+	<input type="text" id="var-a">
+	<select id="operador">
+		<option value="+">mas</option>
+		<option value="-">menos</option>
+		<option value="*">por</option>
+		<option value="/">dividido por</option>
+	</select>	
 	<label for="var-b">variable b</label>
 	<input type="text" id="var-b">
+	<button id="calcular">calcular</button>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		var $vara = $('#var-a'),
+			$varb = $('#var-b'),
+			$operador = $('#operador'),
+			$calcular = $('calcular'),
+			$resultado = $('#resultado')
+	</script>
 </body>
 </html>
