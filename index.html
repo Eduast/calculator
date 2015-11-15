@@ -17,14 +17,37 @@
 	<label for="var-b">variable b</label>
 	<input type="text" id="var-b">
 	<button id="calcular">calcular</button>
+	<input type="text" id="resultado">
 
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script>
-		var $vara = $('#var-a'),
-			$varb = $('#var-b'),
-			$operador = $('#operador'),
-			$calcular = $('calcular'),
+		var $vara      = $('#var-a'),
+			$varb      = $('#var-b'),
+			$operador  = $('#operador'),
+			$calcular  = $('#calcular'),
 			$resultado = $('#resultado')
+
+		function calcular(){
+			var op, a, b, res;
+ 			
+			a  = parseInt( $vara.val() );
+			b  = parseInt( $varb.val() );
+			op = $operador.val();
+
+			if ( op == '+') {
+				res = a + b
+			}else if ( op == '-') {
+				res = a - b
+			}else if ( op == '*') {
+				res = a * b
+			}else {
+				res = a / b
+			};
+
+			$resultado.val(res)
+		}
+
+		$calcular.on('click', calcular);
 	</script>
 </body>
 </html>
